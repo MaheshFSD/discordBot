@@ -6,7 +6,8 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 console.log(process.env.secret, ' ----------- secete ------- ');
 client.on('messageCreate', (message) => {
     console.log(message.content, ' ----------- content created ---------- ');
-    console.log(message.delete().then);
+    console.log(message.author.username, ' -------- username ------- ');
+    message.delete().then((data)=> { console.log(data, 'delete------')}); // trying some ops on messages ... 
 })
 
 client.login(process.env.secret);
